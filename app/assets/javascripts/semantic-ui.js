@@ -18895,7 +18895,7 @@ $.api = $.fn.api = function(parameters) {
               }
               setTimeout(function() {
                 if( module.is.validResponse(response) ) {
-                  // module.request.resolveWith(context, [response, xhr]);
+                  module.request.resolveWith(context, [response, xhr]);
                 }
                 else {
                   module.request.rejectWith(context, [xhr, 'invalid']);
@@ -18917,7 +18917,7 @@ $.api = $.fn.api = function(parameters) {
               }
               setTimeout(function() {
                 if( module.is.abortedRequest(xhr) ) {
-                  module.request.rejectWith(context, [xhr, 'aborted', httpMessage]);
+                  // module.request.rejectWith(context, [xhr, 'aborted', httpMessage]);
                 }
                 else {
                   module.request.rejectWith(context, [xhr, 'error', status, httpMessage]);
